@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <header className=" w-full h-16 bg-slate-950">
         <nav className="">
-          <ul className="flex justify-end mr-14 gap-10  text-lg text-white p-5">
+          <ul className="flex justify-end mr-14 gap-8  text-lg text-white p-5">
             <li className="">
               <a href="">Home</a>
             </li>
