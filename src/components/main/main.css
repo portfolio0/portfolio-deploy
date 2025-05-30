@@ -1,0 +1,17 @@
+/* .p_info p h1,
+h2,
+h3 {
+  display: inline;
+} */
+
+@media only screen and (max-width: 480px) {
+  .img-art {
+    display: none;
+  }
+  .title_name {
+    margin-top: 80px;
+  }
+  .p_info {
+    margin-top: 20px;
+  }
+}

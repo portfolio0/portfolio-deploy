@@ -1,3 +1,39 @@
 .nav-menu {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 480px) {
+  /* #all_links {
+    display: none;
+  } */
+  .logo {
+    display: none;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .hamburger {
+    display: none;
+  }
+  .m-view-links {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*
+
+ building this class for mobile view navigation add it on when mquery fired delete later
+  .m-view-links {
+    height: 100%;
+  }
+
+*/

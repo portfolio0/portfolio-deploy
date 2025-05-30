@@ -59,7 +59,7 @@ function App() {
   // ]);
   return (
     <>
-      <div className="bg-purple-500 m-0 w-full ">
+      <div className="bg-purple-500 m-0 w-[100%] ">
         {/* <RouterProvider router={router} /> */}
         <Navbar />
         <Main />
