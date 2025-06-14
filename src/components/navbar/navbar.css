@@ -1,64 +1,79 @@
 .nav-menu {
   cursor: pointer;
 }
+
 .hamburger {
+  display: block;
+  z-index: 101;
   cursor: pointer;
+  position: relative;
 }
 
 @media only screen and (max-width: 480px) {
-  #all_links {
-    display: none;
-  }
-  .logo {
-    display: none;
-  }
   .nav {
-    flex-direction: column;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    z-index: 50;
   }
-  #all_links {
+
+  .fullscnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* padding: 2rem 1.5rem; */
+    z-index: 100; /* Higher than navbar */
   }
-}
 
-@media screen and (min-width: 480px) {
-  .hamburger {
-    display: none;
+  .hide-links {
+    display: none !important;
   }
-  .nav .hamburger {
-    display: none;
+
+  .show-links {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
   }
-}
 
-.fullscnav {
-  width: 100%;
-  display: flex;
-}
-
-/* media query for full screen navbar */
-/* cgpt */
-
-/* .links.show {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: white;
-  width: 100%;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@media screen and (max-width: 768px) {
-  .links {
+  .logo {
     display: none;
   }
 
   .hamburger {
     display: block;
+    position: relative; /* ⬅️ Keeps it inside .nav */
+    z-index: 101;
+    cursor: pointer;
+    margin-left: auto; /* Pushes it to the right */
   }
-} */
+}
+
+@media screen and (min-width: 481px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .logo {
+    display: block !important;
+  }
+
+  .hide-links,
+  .show-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2rem;
+  }
+}

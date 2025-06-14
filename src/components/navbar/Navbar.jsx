@@ -1,102 +1,111 @@
 import React, { useState } from "react";
-// import { NavLink } from "react-router-dom";
-import "./navbar.css";
 import { Link } from "react-scroll";
 import nav_logo from "../../assets/nav_logo.png";
-// import Hamburger from "../hamburger_button/Hamburger";
-import { IoClose } from "react-icons/io5";
-// import nav_logo_2 from "../../assets/nav_logo_2.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
+import "./navbar.css";
 
 const Navbar = () => {
-  const [isopen, setisopen] = useState(true);
+  const [isopen, setIsOpen] = useState(true);
 
-  // function showmobileview(input) {
-  //   setisopen(input);
-  // }
+  const handlenavclick = () => {
+    setIsOpen(true);
+  };
 
   return (
-    <>
+    // <div
+    //   className={`nav w-full flex items-center justify-between px-5 bg-white p-3 top-0 z-50 ${
+    //     isopen ? "" : "fullscnav"
+    //   }`}
+    // >
+    <div
+      className={`nav w-full backdrop-blur-md bg-white/50 top-0 z-50 transition-all duration-300 ${
+        isopen
+          ? "flex items-center justify-between px-5 p-3 sticky"
+          : "fixed h-screen flex flex-col items-center justify-start pt-20 px-5"
+      }`}
+    >
+      {/* Logo */}
+      <div className="logo">
+        <img src={nav_logo} alt="logo" className="h-12" />
+      </div>
+
+      {/* Hamburger / Close Button */}
+      <div className="hamburger">
+        {isopen ? (
+          <GiHamburgerMenu size={30} onClick={() => setIsOpen(false)} />
+        ) : (
+          <IoCloseSharp size={30} onClick={() => setIsOpen(true)} />
+        )}
+      </div>
+
+      {/* Nav Links */}
+      {/* <div
+        id="all_links"
+        className={`links ${isopen ? "hide-links" : "show-links"}`}
+      > */}
       <div
-        className={`nav flex items-center justify-between gap-x-8 px-18 bg-white sticky p-3 top-0 ${
-          isopen ? " " : " fullscnav"
+        id="all_links"
+        className={`transition-all duration-300 ${
+          isopen ? "hidden" : "flex flex-col items-center gap-5 mt-5"
         }`}
       >
-        <div className="logo">
-          <img src={nav_logo} alt=" logo" className="h-12" />
-        </div>
-        <div className="hamburger flex justify-end w-[100%]">
-          {/* <Hamburger /> */}
-          {isopen ? (
-            <GiHamburgerMenu
-              className="open_btn"
-              size={30}
-              onClick={() => setisopen(false)}
-            />
-          ) : (
-            <IoCloseSharp
-              className="close_btn"
-              size={30}
-              onClick={() => setisopen(true)}
-            />
-          )}
-        </div>
-        <div
-          id="all_links"
-          className={`links flex gap-10 px-5 m-view-links`} /*flex  gap-10 px-5 m-view-links*/
+        <Link
+          className="nav-menu font-medium"
+          to="about"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
         >
-          <Link
-            className="nav-menu font-medium"
-            to="about"
-            smooth={true}
-            duration={500}
-          >
-            About-Us
-          </Link>
-          <Link
-            className="nav-menu font-medium"
-            to="projects"
-            smooth={true}
-            duration={500}
-          >
-            Projects
-          </Link>
-          <Link
-            className="nav-menu font-medium"
-            to="skills"
-            smooth={true}
-            duration={500}
-          >
-            Skills
-          </Link>
-          <Link
-            className="nav-menu font-medium"
-            to="resume"
-            smooth={true}
-            duration={500}
-          >
-            Resume
-          </Link>
-          <Link
-            className="nav-menu font-medium"
-            to="contact"
-            smooth={true}
-            duration={500}
-          >
-            Contact
-          </Link>
-          <Link
-            className="nav-menu font-medium"
-            to="blog"
-            smooth={true}
-            duration={500}
-          >
-            Blog
-          </Link>
-        </div>
+          About-Us
+        </Link>
+        <Link
+          className="nav-menu font-medium"
+          to="projects"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
+        >
+          Projects
+        </Link>
+        <Link
+          className="nav-menu font-medium"
+          to="skills"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
+        >
+          Skills
+        </Link>
+        <Link
+          className="nav-menu font-medium"
+          to="resume"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
+        >
+          Resume
+        </Link>
+        <Link
+          className="nav-menu font-medium"
+          to="contact"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
+        >
+          Contact
+        </Link>
+        <Link
+          className="nav-menu font-medium"
+          to="blog"
+          smooth
+          duration={500}
+          onClick={handlenavclick}
+        >
+          Blog
+        </Link>
       </div>
-    </>
+    </div>
   );
 };
 
