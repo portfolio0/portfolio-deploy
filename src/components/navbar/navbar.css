@@ -1,39 +1,64 @@
 .nav-menu {
   cursor: pointer;
 }
+.hamburger {
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 480px) {
-  /* #all_links {
+  #all_links {
     display: none;
-  } */
+  }
   .logo {
     display: none;
   }
   .nav {
     flex-direction: column;
   }
-  .hamburger {
-    display: none;
-  }
-  /* .m-view-links {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
+  #all_links {
     height: 100vh;
-  } */
+  }
 }
 
 @media screen and (min-width: 480px) {
   .hamburger {
     display: none;
   }
+  .nav .hamburger {
+    display: none;
+  }
 }
 
-/*
+.fullscnav {
+  width: 100%;
+  display: flex;
+}
 
- building this class for mobile view navigation add it on when mquery fired delete later
-  .m-view-links {
-    height: 100%;
+/* media query for full screen navbar */
+/* cgpt */
+
+/* .links.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .links {
+    display: none;
   }
 
-*/
+  .hamburger {
+    display: block;
+  }
+} */

@@ -3,22 +3,49 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { Link } from "react-scroll";
 import nav_logo from "../../assets/nav_logo.png";
-import Hamburger from "../hamburger_button/Hamburger";
+// import Hamburger from "../hamburger_button/Hamburger";
 import { IoClose } from "react-icons/io5";
 // import nav_logo_2 from "../../assets/nav_logo_2.png";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const [isopen, setisopen] = useState(true);
+
+  // function showmobileview(input) {
+  //   setisopen(input);
+  // }
+
   return (
     <>
-      <div className="nav flex items-center justify-between gap-x-8 px-18 bg-white sticky p-3 top-0">
+      <div
+        className={`nav flex items-center justify-between gap-x-8 px-18 bg-white sticky p-3 top-0 ${
+          isopen ? " " : " fullscnav"
+        }`}
+      >
         <div className="logo">
           <img src={nav_logo} alt=" logo" className="h-12" />
         </div>
-        <div className="hamburger">
-          <Hamburger />
+        <div className="hamburger flex justify-end w-[100%]">
+          {/* <Hamburger /> */}
+          {isopen ? (
+            <GiHamburgerMenu
+              className="open_btn"
+              size={30}
+              onClick={() => setisopen(false)}
+            />
+          ) : (
+            <IoCloseSharp
+              className="close_btn"
+              size={30}
+              onClick={() => setisopen(true)}
+            />
+          )}
         </div>
-        <div id="all_links" className={`links flex  gap-10 px-5 m-view-links`}>
+        <div
+          id="all_links"
+          className={`links flex gap-10 px-5 m-view-links`} /*flex  gap-10 px-5 m-view-links*/
+        >
           <Link
             className="nav-menu font-medium"
             to="about"
