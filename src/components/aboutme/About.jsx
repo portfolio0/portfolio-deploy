@@ -1,7 +1,12 @@
 import React from "react";
+import Education from "./Education";
 
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <Education />
+    </div>
+  );
 };
 
 export default About;

@@ -63,22 +63,22 @@ function App() {
         {/* <RouterProvider router={router} /> */}
         <Navbar />
         <Main />
-        <div className="h-[100vh]" id="about">
+        <div className="min-h-screen py-16 px-4" id="about">
           <About />
         </div>
-        <div className="h-[100vh]" id="projects">
+        <div className="min-h-screen py-16 px-4" id="projects">
           <Projects />
         </div>
-        <div className="h-[100vh]" id="skills">
+        <div className="min-h-screen py-16 px-4" id="skills">
           <Skill />
         </div>
-        <div className="h-[100vh]" id="resume">
+        <div className="min-h-screen py-16 px-4" id="resume">
           <Resume />
         </div>
-        <div className="h-[100vh]" id="contact">
+        <div className="min-h-screen py-16 px-4" id="contact">
           <Contact />
         </div>
-        <div className="h-[100vh]" id="blog">
+        <div className="min-h-screen py-16 px-4" id="blog">
           <Blog />
         </div>
         <Footer />
