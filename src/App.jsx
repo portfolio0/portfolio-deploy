@@ -59,26 +59,26 @@ function App() {
   // ]);
   return (
     <>
-      <div className="bg-purple-500 m-0 w-[100%] ">
+      <div className=" m-0 w-[100%] bg-#090040-600 ">
         {/* <RouterProvider router={router} /> */}
         <Navbar />
         <Main />
-        <div className="min-h-screen py-16 px-4" id="about">
+        <div className="min-h-screen " id="about">
           <About />
         </div>
-        <div className="min-h-screen py-16 px-4" id="projects">
+        <div className="min-h-screen " id="projects">
           <Projects />
         </div>
-        <div className="min-h-screen py-16 px-4" id="skills">
+        <div className="min-h-screen " id="skills">
           <Skill />
         </div>
-        <div className="min-h-screen py-16 px-4" id="resume">
+        <div className="min-h-screen " id="resume">
           <Resume />
         </div>
-        <div className="min-h-screen py-16 px-4" id="contact">
+        <div className="min-h-screen " id="contact">
           <Contact />
         </div>
-        <div className="min-h-screen py-16 px-4" id="blog">
+        <div className="min-h-screen " id="blog">
           <Blog />
         </div>
         <Footer />
