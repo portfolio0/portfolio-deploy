@@ -35,8 +35,10 @@ const Footer = () => {
           <img src={footer_logo} alt=" footer-logo" className="h-8" />
         </div>
         <div className="">
-          <img src={uparrow} className="h-16 cursor-pointer" alt="" />
-          <span>go to top</span>
+          <Link to="main" smooth duration={900}>
+            <img src={uparrow} className="h-16 cursor-pointer" alt="" />
+            go to top
+          </Link>
         </div>
         <div className="pl-10 ">
           &copy; 2025 Onkar Nanavare | Frontend Developer 🚀
