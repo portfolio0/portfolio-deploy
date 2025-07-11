@@ -1,4 +1,4 @@
-.nav-menu {
+/* .nav-menu {
   cursor: pointer;
 }
 
@@ -10,54 +10,19 @@
 }
 
 @media only screen and (max-width: 480px) {
-  /* .nav {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    z-index: 50;
-  } */
-
-  /* .fullscnav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    /* padding: 2rem 1.5rem; 
-    z-index: 100;  Higher than navbar 
-  } */
-
-  /* .hide-links {
-    display: none !important;
-  }
-
-  .show-links {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-top: 2rem;
-  } */
-
   .logo {
     display: none;
   }
 
   .hamburger {
     display: block;
-    position: relative; /* ⬅️ Keeps it inside .nav */
+    position: relative;
     z-index: 101;
     cursor: pointer;
-    margin-left: auto; /* Pushes it to the right */
+    margin-left: auto;
+  }
+  #all_links {
+    display: none;
   }
 }
 
@@ -69,11 +34,4 @@
   .logo {
     display: block !important;
   }
-
-  .hide-links,
-  .show-links {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 2rem;
-  }
-}
+} */

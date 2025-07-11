@@ -1,136 +1,137 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import React, { useEffect, useState } from "react";
 import nav_logo from "../../assets/nav_logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
-import "./navbar.css";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
-  const [isopen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [shownavbar, setshownavbar] = useState(true);
 
-  const handlenavclick = () => {
-    setIsOpen(true);
-  };
-
   useEffect(() => {
-    let previousscrolly = window.scrollY;
-
+    let previousscollyposition = window.scrollY;
     const handlescroll = () => {
       const currentscrollyposition = window.scrollY;
       if (
-        currentscrollyposition > previousscrolly &&
+        currentscrollyposition > previousscollyposition &&
         currentscrollyposition > 50
       ) {
         setshownavbar(false);
       } else {
         setshownavbar(true);
       }
-      previousscrolly = currentscrollyposition;
+      previousscollyposition = currentscrollyposition;
     };
-
     window.addEventListener("scroll", handlescroll);
+
     return () => {
       window.removeEventListener("scroll", handlescroll);
     };
   }, []);
 
   return (
-    // <div
-    //   className={`nav w-full flex items-center justify-between px-5 bg-white p-3 top-0 z-50 ${
-    //     isopen ? "" : "fullscnav"
-    //   }`}
-    // >
-    <div
-      className={`nav w-full backdrop-blur-md bg-white/50 top-0 z-50 transition-all duration-300
-        ${shownavbar ? "translate-y-0" : "-translate-y-full"} ${
-        isopen
-          ? "flex items-center justify-between px-5 p-3 sticky"
-          : "fixed h-screen flex flex-col items-center justify-start pt-20 px-5"
-      }`}
-    >
-      {/* Logo */}
-      <div className="logo">
-        <img src={nav_logo} alt="logo" className="h-12" />
-      </div>
-
-      {/* Hamburger / Close Button */}
-      <div className="hamburger">
-        {isopen ? (
-          <GiHamburgerMenu size={30} onClick={() => setIsOpen(false)} />
-        ) : (
-          <IoCloseSharp size={30} onClick={() => setIsOpen(true)} />
-        )}
-      </div>
-
-      {/* Nav Links */}
-      {/* <div
-        id="all_links"
-        className={`links ${isopen ? "hide-links" : "show-links"}`}
-      > */}
+    <>
+      {/* Main Navbar Container */}
       <div
-        id="all_links"
-        className={`transition-all duration-300 ${
-          isopen ? "hidden" : "flex flex-col items-center gap-5 mt-5"
+        className={`fixed top-0 w-full z-50 flex items-center justify-between px-6 py-2 
+        backdrop-blur-3xl bg-pink-400/20 shadow-xl text-white transition-transform duration-300 ${
+          shownavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <Link
-          className="nav-menu font-medium"
-          to="about"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
+        {/* Logo */}
+        <div className="z-50">
+          <img src={nav_logo} alt="logo" className="h-12" />
+        </div>
+
+        {/* Hamburger (Mobile only) */}
+        <div
+          className="md:hidden z-50 text-3xl cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          About-Us
-        </Link>
-        <Link
-          className="nav-menu font-medium"
-          to="projects"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
-        >
-          Projects
-        </Link>
-        <Link
-          className="nav-menu font-medium"
-          to="skills"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
-        >
-          Skills
-        </Link>
-        <Link
-          className="nav-menu font-medium"
-          to="resume"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
-        >
-          Resume
-        </Link>
-        <Link
-          className="nav-menu font-medium"
-          to="contact"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
-        >
-          Contact
-        </Link>
-        <Link
-          className="nav-menu font-medium"
-          to="blog"
-          smooth
-          duration={500}
-          onClick={handlenavclick}
-        >
-          Blog
-        </Link>
+          {isOpen ? <IoCloseSharp /> : <GiHamburgerMenu />}
+        </div>
+
+        {/* Desktop Menu (visible only on md+) */}
+        <div className="hidden md:flex gap-8 font-medium pr-4">
+          <Link to="about" smooth duration={500}>
+            About-Me
+          </Link>
+          <Link to="projects" smooth duration={500}>
+            Projects
+          </Link>
+          <Link to="skills" smooth duration={500}>
+            Skills
+          </Link>
+          <Link to="resume" smooth duration={500}>
+            Resume
+          </Link>
+          <Link to="contact" smooth duration={500}>
+            Contact
+          </Link>
+          <Link to="blog" smooth duration={500}>
+            Blog
+          </Link>
+        </div>
       </div>
-    </div>
+
+      {/* Fullscreen Mobile Menu */}
+      {isOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-screen  backdrop-blur-3xl 
+          flex flex-col items-center justify-center gap-10 text-white text-2xl font-semibold z-40"
+        >
+          <Link
+            to="about"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            About-Us
+          </Link>
+          <Link
+            to="projects"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            Projects
+          </Link>
+          <Link
+            to="skills"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            Skills
+          </Link>
+          <Link
+            to="resume"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            Resume
+          </Link>
+          <Link
+            to="contact"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </Link>
+          <Link
+            to="blog"
+            smooth
+            duration={500}
+            onClick={() => setIsOpen(false)}
+          >
+            Blog
+          </Link>
+        </div>
+      )}
+    </>
   );
 };
 

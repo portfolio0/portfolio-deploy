@@ -16,7 +16,7 @@ const Main = () => {
     );
   };
   return (
-    <div className="main h-screen">
+    <div className="main pt-20 h-screen ">
       <div className="parts flex items-center justify-evenly">
         <div className="info mt-3 text-center">
           <div className="title_name">
@@ -34,7 +34,7 @@ const Main = () => {
               />
             </div>
           </div>
-          <div className="p_info mt-3 flex flex-col">
+          <div className="p_info mt-3 flex flex-col text-white">
             <p>
               <span className="font-bold"> Hi, I’m Onkar Nanvare</span>, a
               passionate and dedicated{" "}

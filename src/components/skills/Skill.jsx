@@ -54,7 +54,7 @@ const Skill = () => {
           debitis vitae sunt?
         </p>
       </div>
-      <div className="skill_boxes w-full items-center justify-center  gap-10 flex flex-wrap">
+      <div className="skill_boxes w-full items-center justify-center   gap-10 flex flex-wrap">
         {Skill_details.map((skills, index) => (
           <Skill_section key={index} {...skills} />
         ))}

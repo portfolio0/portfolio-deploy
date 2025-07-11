@@ -72,7 +72,7 @@ function App() {
         <div className="min-h-[60vh] " id="skills">
           <Skill />
         </div>
-        <div className="min-h-screen " id="resume">
+        <div className="min-h-[50vh] " id="resume">
           <Resume />
         </div>
         <div className="min-h-screen " id="contact">
