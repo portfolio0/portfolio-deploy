@@ -1,6 +1,6 @@
 import React from "react";
 import "./contact.css";
-import myart from "../../assets/contactPage/my-art.png";
+import myart from "../../assets/contactPage/My-art.png";
 import linkedin from "../../assets/contactPage/social-logos/linkedin.png";
 import github from "../../assets/contactPage/social-logos/github.png";
 import email from "../../assets/contactPage/social-logos/email.png";
