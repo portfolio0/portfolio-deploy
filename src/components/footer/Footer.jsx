@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       <div className="footer-end pt-52  pb-20 flex items-center justify-evenly">
         <div className="footer-logo">
-          <img src={footer_logo} alt=" footer-logo" className="h-8" />
+          <img src={footer_logo} alt=" footer-logo" className="h-10" />
         </div>
         <div className="">
           <Link to="main" smooth duration={900}>

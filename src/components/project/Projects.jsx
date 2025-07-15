@@ -17,25 +17,27 @@ const Projects = () => {
     },
     {
       image: dice_game,
-      title: "ToDo Website",
-      description: "ToDo Website that used to manage Tasks ",
-      technology: "React,Javascript,Html,Css,TailwindCss",
-      ProjectLink:
-        "https://todo-app-lrql-8i8fpb8nb-portfolio0s-projects.vercel.app/",
-    },
-    {
-      image: dictionary,
-      title: "Dice Game",
-      description: "Dice Number Guessing Fun Game ",
-      technology: "React,Javascript,Html,Css,TailwindCss",
+      title: "Dice  Game",
+      description:
+        " A fun dice game where players guess a number before rolling, gaining or losing points based on the result. ",
+      technology: "React,Javascript,Html,Css",
       ProjectLink: "https://github.com/portfolio0/dice_game",
     },
     {
-      image: todo_app,
-      title: "Dictonary Webapp",
+      image: dictionary,
+      title: "Dictionary App",
       description: "simple dictonary website built by using help of API ",
       technology: "Javascript,Html,Css",
       ProjectLink: "https://portfolio0.github.io/dict-app/",
+    },
+    {
+      image: todo_app,
+      title: "To_Do App",
+      description: "A simple ToDo app to add, delete, and manage daily tasks.",
+      technology: "Reactjs,Javascript,Html,Css",
+      ProjectLink:
+        "https://todo-app-lrql-8i8fpb8nb-portfolio0s-projects.vercel.app/",
+      //
     },
   ];
   return (
