@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu (visible only on md+) */}
-        <div className="hidden md:flex gap-8 font-medium pr-4">
+        <div className="hidden md:flex gap-8 font-medium pr-4 transition-transform duration-300">
           <Link to="about" smooth duration={500}>
             About-Me
           </Link>

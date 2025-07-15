@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./contact.css";
 import myart from "../../assets/contactPage/My-art.png";
+import emailjs from "emailjs-com";
+
 import linkedin from "../../assets/contactPage/social-logos/linkedin.png";
 import github from "../../assets/contactPage/social-logos/github.png";
 import email from "../../assets/contactPage/social-logos/email.png";
@@ -8,6 +10,28 @@ import instagram from "../../assets/contactPage/social-logos/instagram.png";
 import whatsapp from "../../assets/contactPage/social-logos/whatsapp.png";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendemail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_hqonff9",
+        "template_0nwr5ac",
+        form.current,
+        "LqxwXDHuzb5_WNw4G"
+      )
+      .then(
+        (result) => {
+          alert("message Sent successfully❤️");
+          form.current.reset();
+        },
+        (error) => {
+          alert("Failed To Sent Message🥲:Try Again");
+        }
+      );
+  };
+
   return (
     <div className={` flexitems-center justify-center`}>
       <div className="main-container flex gap-20">
@@ -16,27 +40,46 @@ const Contact = () => {
           <img src={myart} alt="" />
         </div>
         <div className="form-container flex items-center justify-center form ">
-          <form action="" className="flex flex-col gap-5">
+          <form
+            action=""
+            ref={form}
+            onSubmit={sendemail}
+            className="flex flex-col gap-5"
+          >
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
                 Full Name:
               </label>
-              <input type="text" placeholder="Full Name" />
+              <input type="text" name="full_name" placeholder="Full Name" />
             </div>
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
                 Mobile No:
               </label>
-              <input type="text" placeholder="Mobile No" />
+              <input type="text" name="mobile_no" placeholder="Mobile No" />
             </div>
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
                 Email:
               </label>
-              <input type="text" placeholder="Email" />
+              <input type="text" name="email" placeholder="Email" />
+            </div>
+            <div className="form-elem">
+              <label htmlFor="" className="text-white text-lg">
+                Message:
+              </label>
+              <textarea
+                type="text"
+                name="message"
+                placeholder="Message"
+                rows={5}
+              />
             </div>
             <div className="flex items-center justify-center">
-              <button className=" py-2 px-10 bg-orange-500 rounded-2xl text-white text-lg cursor-pointer">
+              <button
+                type="submit"
+                className=" py-2 px-10 bg-orange-500 rounded-2xl text-white text-lg cursor-pointer"
+              >
                 Submit
               </button>
             </div>
