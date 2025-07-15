@@ -1,5 +1,6 @@
 import "./App.css";
 // import Header from "./components/header/Header";
+import { Slide, ToastContainer } from "react-toastify";
 
 // import Main from "./components/main/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -63,6 +64,14 @@ function App() {
         {/* <RouterProvider router={router} /> */}
         <Navbar />
         <Main />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          newestOnTop
+          closeOnClick
+          draggable
+          transition={Slide}
+        />
         <div className="min-h-screen " id="about">
           <About />
         </div>

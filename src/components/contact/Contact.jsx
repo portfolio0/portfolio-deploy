@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import "./contact.css";
 import myart from "../../assets/contactPage/My-art.png";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 import linkedin from "../../assets/contactPage/social-logos/linkedin.png";
 import github from "../../assets/contactPage/social-logos/github.png";
@@ -23,11 +24,11 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          alert("message Sent successfully❤️");
+          toast.success("✅Message Sent SuccessFully:thanks To Connect❤️");
           form.current.reset();
         },
         (error) => {
-          alert("Failed To Sent Message🥲:Try Again");
+          toast.error("❌Faild To Send Message.Please Try Again🥲");
         }
       );
   };
@@ -50,19 +51,29 @@ const Contact = () => {
               <label htmlFor="" className="text-white text-lg">
                 Full Name:
               </label>
-              <input type="text" name="full_name" placeholder="Full Name" />
+              <input
+                type="text"
+                name="full_name"
+                placeholder="Full Name"
+                required
+              />
             </div>
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
                 Mobile No:
               </label>
-              <input type="text" name="mobile_no" placeholder="Mobile No" />
+              <input
+                type="text"
+                name="mobile_no"
+                placeholder="Mobile No"
+                required
+              />
             </div>
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
                 Email:
               </label>
-              <input type="text" name="email" placeholder="Email" />
+              <input type="text" name="email" placeholder="Email" required />
             </div>
             <div className="form-elem">
               <label htmlFor="" className="text-white text-lg">
@@ -73,6 +84,7 @@ const Contact = () => {
                 name="message"
                 placeholder="Message"
                 rows={5}
+                required
               />
             </div>
             <div className="flex items-center justify-center">
