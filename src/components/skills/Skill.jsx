@@ -45,13 +45,12 @@ const Skill = () => {
   return (
     <div className="mt-10 ">
       <div className="skill_summery text-white text-lg text-center mt-10 mb-10">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          deleniti perferendis, molestiae ab impedit esse vel quisquam
-          necessitatibus ad minus temporibus fuga in sed quod mollitia facilis
-          culpa porro a. Omnis quod placeat eius saepe voluptatum unde earum
-          illo doloremque! Quo quisquam dolorum facilis omnis soluta saepe
-          debitis vitae sunt?
+        <p className="px-32 py-5">
+          Full-stack web developer with a strong grasp of modern technologies
+          like React, Node.js, Express, and MongoDB. Experienced in building
+          responsive UIs, REST APIs, and deploying web apps using tools like
+          GitHub, Render, and Netlify. Passionate about clean code, performance,
+          and problem-solving.
         </p>
       </div>
       <div className="skill_boxes w-full items-center justify-center   gap-10 flex flex-wrap">

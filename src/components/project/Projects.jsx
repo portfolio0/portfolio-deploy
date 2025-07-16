@@ -4,6 +4,8 @@ import img from "../../assets/Portfolio-Desk.jpg";
 import dice_game from "../../assets/dice_game.png";
 import dictionary from "../../assets/dictionary.jpeg";
 import todo_app from "../../assets/todo_app.png";
+import Contact_page from "../../assets/project-img/contact-us.png";
+import nike_page from "../../assets/project-img/nike_page.png";
 
 import Card from "./Card";
 const Projects = () => {
@@ -37,6 +39,23 @@ const Projects = () => {
       technology: "Reactjs,Javascript,Html,Css",
       ProjectLink:
         "https://todo-app-lrql-8i8fpb8nb-portfolio0s-projects.vercel.app/",
+      //
+    },
+    // new
+    {
+      image: Contact_page,
+      title: "Contact-Page",
+      description: "A simple Static Contact Page ",
+      technology: "Reactjs,Javascript,Html,Css,StyledCss",
+      ProjectLink: "https://portfolio0.github.io/contact-us-page-design/",
+      //
+    },
+    {
+      image: nike_page,
+      title: "Nike Brand Static Webpage",
+      description: "A simple Static Contact Page ",
+      technology: "Reactjs,Javascript,Html,Css,StyledCss",
+      ProjectLink: "https://portfolio0.github.io/contact-us-page-design/",
       //
     },
   ];
